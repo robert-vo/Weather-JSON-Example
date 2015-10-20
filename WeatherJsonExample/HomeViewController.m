@@ -6,15 +6,16 @@
 //  Copyright © 2015 Robert Vo. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "HomeViewController.h"
 #import "Weather.h"
 #import "NSString+Utilities.h"
+#import "WeatherDetailViewController.h"
 
-@interface ViewController ()
+@interface HomeViewController ()
 
 @end
 
-@implementation ViewController
+@implementation HomeViewController
 
 @synthesize temperatureLabel, cityField, pressureLabel, humidityLabel, maxAndMinTemperatureLabel, currentWeatherDescriptionLabel, weatherForCity, weatherViewController, weatherDataResponse;
 
@@ -54,10 +55,19 @@
             weatherForCity.maximumTemperature = [[weatherDataResponse objectForKey:@"main"] objectForKey:@"temp_max"];
             weatherForCity.minimumTemperature = [[weatherDataResponse objectForKey:@"main"] objectForKey:@"temp_min"];
             weatherForCity.weatherDescription = [[[weatherDataResponse objectForKey:@"weather"] objectAtIndex:0] objectForKey:@"description"];
-           
-        } [self.weatherViewController setNeedsDisplay];
-    }] resume];
+        }     }] resume];
+    [self performSegueWithIdentifier:@"weatherVC" sender:nil];
+
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if(weatherForCity.temperature != nil || weatherForCity.pressure != nil) {
+        WeatherDetailViewController* vc = [segue destinationViewController];
+        vc.weatherDetail = weatherForCity;
+    }
+    else {
+        //Don't do anything. 
+    }
+}
 
 @end

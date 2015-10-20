@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "Weather.h"
+#import "WeatherDetailViewController.h"
 
-@interface ViewController : UIViewController
+@interface HomeViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UILabel *temperatureLabel;
 @property (weak, nonatomic) IBOutlet UITextField *cityField;
