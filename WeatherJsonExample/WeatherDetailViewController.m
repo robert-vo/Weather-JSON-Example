@@ -16,17 +16,20 @@
 
 @implementation WeatherDetailViewController
 
-@synthesize weatherDetail;
+@synthesize weatherDetail, searchedCity, temperatureLabel, pressureLabel, humidityLabel, maxAndMinTemperatureLabel, currentWeatherDescriptionLabel;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(weatherDetail.weatherDescription);
-    
+    self.title = searchedCity;
+    temperatureLabel.text = [NSString stringWithFormat:@"Temperature: %@", weatherDetail.temperature];
+    pressureLabel.text = [NSString stringWithFormat:@"Pressure: %@", weatherDetail.pressure];
+    humidityLabel.text = [NSString stringWithFormat:@"Humidity: %@", weatherDetail.humidity];
+    maxAndMinTemperatureLabel.text = [NSString stringWithFormat:@"Min Temp: %@, Max Temp: %@", weatherDetail.maximumTemperature, weatherDetail.minimumTemperature];
+    currentWeatherDescriptionLabel.text = [NSString stringWithFormat:@"Description: %@", weatherDetail.weatherDescription];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 

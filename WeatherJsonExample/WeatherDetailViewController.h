@@ -11,6 +11,12 @@
 
 @interface WeatherDetailViewController : UIViewController
 
-@property Weather* weatherDetail;
+@property Weather *weatherDetail;
+@property NSString *searchedCity;
+@property (weak, nonatomic) IBOutlet UILabel *temperatureLabel;
+@property (weak, nonatomic) IBOutlet UILabel *pressureLabel;
+@property (weak, nonatomic) IBOutlet UILabel *humidityLabel;
+@property (weak, nonatomic) IBOutlet UILabel *maxAndMinTemperatureLabel;
+@property (weak, nonatomic) IBOutlet UILabel *currentWeatherDescriptionLabel;
 
 @end
