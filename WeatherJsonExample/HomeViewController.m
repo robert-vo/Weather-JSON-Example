@@ -17,7 +17,7 @@
 
 @implementation HomeViewController
 
-@synthesize temperatureLabel, cityField, pressureLabel, humidityLabel, maxAndMinTemperatureLabel, currentWeatherDescriptionLabel, weatherForCity, weatherViewController, weatherDataResponse;
+@synthesize cityField, weatherForCity, weatherViewController, weatherDataResponse;
 
 
 - (void)viewDidLoad {
@@ -34,16 +34,14 @@
 -(IBAction)loadWeatherDataForGivenCity:(id)sender {
     NSString *url = [NSString createURL:cityField.text];
     NSURLSession *session = [NSURLSession sharedSession];
-    
+    __block BOOL jsonParsingCompleted = NO;
+
     [[session dataTaskWithURL:[NSURL URLWithString:url] completionHandler:^(NSData *data,
                                                                             NSURLResponse *response,
                                                                             NSError *error) {
         if (error != nil) {
-            NSString *errorTitle = @"Error";
-            NSString *message = @"Error getting JSON file.";
-            UIAlertView *selectedAlert = [[UIAlertView alloc]
-                                          initWithTitle:[NSString stringWithFormat:@"%@", errorTitle] message:[NSString stringWithFormat:@"%@",message] delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil];
-            [selectedAlert show];
+            weatherForCity = nil;
+            jsonParsingCompleted = YES;
         }
         else {
             NSLog(@"valid json. yay!");
@@ -55,18 +53,36 @@
             weatherForCity.maximumTemperature = [[weatherDataResponse objectForKey:@"main"] objectForKey:@"temp_max"];
             weatherForCity.minimumTemperature = [[weatherDataResponse objectForKey:@"main"] objectForKey:@"temp_min"];
             weatherForCity.weatherDescription = [[[weatherDataResponse objectForKey:@"weather"] objectAtIndex:0] objectForKey:@"description"];
+            jsonParsingCompleted = YES;
         }     }] resume];
+    
+    while (CFRunLoopRunInMode(kCFRunLoopDefaultMode, 0, true) && !jsonParsingCompleted){};
+    
     [self performSegueWithIdentifier:@"weatherVC" sender:nil];
 
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if(weatherForCity.temperature != nil || weatherForCity.pressure != nil) {
+    if(weatherForCity != nil) {
         WeatherDetailViewController* vc = [segue destinationViewController];
         vc.weatherDetail = weatherForCity;
+        vc.searchedCity = cityField.text;
     }
     else {
-        //Don't do anything. 
+        UIAlertController * alert=   [UIAlertController
+                                      alertControllerWithTitle:@"Error"
+                                      message: [NSString stringWithFormat:@"Unable to find any weather data for %@", cityField.text]
+                                      preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *okayButton = [UIAlertAction
+                                     actionWithTitle:@"Okay"
+                                     style:UIAlertActionStyleDefault
+                                     handler:^(UIAlertAction * action) {
+                                         [alert dismissViewControllerAnimated:YES completion:nil];
+                                     }];
+        [alert addAction:okayButton];
+        
+        [self presentViewController:alert animated:YES completion:nil];
     }
 }
 
