@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E169E46C1BD60F6D00159CFA /* Weather.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F593951BD5FD3F00CC612D /* Weather.m */; };
 		E1F593711BD5F82B00CC612D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F593701BD5F82B00CC612D /* main.m */; };
 		E1F593741BD5F82B00CC612D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F593731BD5F82B00CC612D /* AppDelegate.m */; };
 		E1F593771BD5F82B00CC612D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F593761BD5F82B00CC612D /* ViewController.m */; };
@@ -220,6 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E169E46C1BD60F6D00159CFA /* Weather.m in Sources */,
 				E1F593771BD5F82B00CC612D /* ViewController.m in Sources */,
 				E1F593741BD5F82B00CC612D /* AppDelegate.m in Sources */,
 				E1F5939C1BD5FFC600CC612D /* NSString+Utilities.m in Sources */,

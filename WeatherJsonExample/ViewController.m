@@ -46,16 +46,15 @@
         }
         else {
             NSLog(@"valid json. yay!");
-            weatherDataResponse = [[NSArray alloc] init];
+            weatherDataResponse = [[NSDictionary alloc] init];
             weatherDataResponse = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-            for(NSDictionary* weatherData in weatherDataResponse) {
-                weatherForCity.temperature = [weatherData objectForKey:@"temperature"];
-                weatherForCity.pressure = [weatherData objectForKey:@"pressure"];
-                weatherForCity.humidity = [weatherData objectForKey:@"humidity"];
-                weatherForCity.maximumTemperature = [[weatherData objectForKey:@"main"] objectForKey:@"temp_max"];
-                weatherForCity.minimumTemperature = [[weatherData objectForKey:@"main"] objectForKey:@"temp_min"];
-                weatherForCity.weatherDescription = [[weatherData objectForKey:@"weather"] objectAtIndex:2];
-            }
+            weatherForCity.temperature = [[weatherDataResponse objectForKey:@"main"] objectForKey:@"temp"];
+            weatherForCity.pressure = [[weatherDataResponse objectForKey:@"main"] objectForKey:@"pressure"];
+            weatherForCity.humidity = [[weatherDataResponse objectForKey:@"main"] objectForKey:@"humidity"];
+            weatherForCity.maximumTemperature = [[weatherDataResponse objectForKey:@"main"] objectForKey:@"temp_max"];
+            weatherForCity.minimumTemperature = [[weatherDataResponse objectForKey:@"main"] objectForKey:@"temp_min"];
+            weatherForCity.weatherDescription = [[[weatherDataResponse objectForKey:@"weather"] objectAtIndex:0] objectForKey:@"description"];
+           
         } [self.weatherViewController setNeedsDisplay];
     }] resume];
 }

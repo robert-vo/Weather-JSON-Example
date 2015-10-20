@@ -17,7 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *humidityLabel;
 @property (weak, nonatomic) IBOutlet UILabel *maxAndMinTemperatureLabel;
 @property (weak, nonatomic) IBOutlet UILabel *currentWeatherDescriptionLabel;
-@property NSArray *weatherDataResponse;
+@property NSDictionary *weatherDataResponse;
 @property Weather *weatherForCity;
 @property (strong, nonatomic) IBOutlet UIView *weatherViewController;
 -(IBAction)loadWeatherDataForGivenCity:(id)sender;
