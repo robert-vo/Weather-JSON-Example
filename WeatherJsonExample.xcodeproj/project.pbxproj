@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		E169E46C1BD60F6D00159CFA /* Weather.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F593951BD5FD3F00CC612D /* Weather.m */; };
+		E169E46F1BD6143C00159CFA /* WeatherDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E169E46E1BD6143C00159CFA /* WeatherDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
 		E1F593711BD5F82B00CC612D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F593701BD5F82B00CC612D /* main.m */; };
 		E1F593741BD5F82B00CC612D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F593731BD5F82B00CC612D /* AppDelegate.m */; };
-		E1F593771BD5F82B00CC612D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F593761BD5F82B00CC612D /* ViewController.m */; };
+		E1F593771BD5F82B00CC612D /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F593761BD5F82B00CC612D /* HomeViewController.m */; };
 		E1F5937A1BD5F82B00CC612D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1F593781BD5F82B00CC612D /* Main.storyboard */; };
 		E1F5937C1BD5F82B00CC612D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1F5937B1BD5F82B00CC612D /* Assets.xcassets */; };
 		E1F5937F1BD5F82B00CC612D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1F5937D1BD5F82B00CC612D /* LaunchScreen.storyboard */; };
@@ -29,12 +30,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E169E46D1BD6143C00159CFA /* WeatherDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherDetailViewController.h; sourceTree = "<group>"; };
+		E169E46E1BD6143C00159CFA /* WeatherDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherDetailViewController.m; sourceTree = "<group>"; };
 		E1F5936C1BD5F82B00CC612D /* WeatherJsonExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherJsonExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1F593701BD5F82B00CC612D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E1F593721BD5F82B00CC612D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E1F593731BD5F82B00CC612D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E1F593751BD5F82B00CC612D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E1F593761BD5F82B00CC612D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E1F593751BD5F82B00CC612D /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		E1F593761BD5F82B00CC612D /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		E1F593791BD5F82B00CC612D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E1F5937B1BD5F82B00CC612D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1F5937E1BD5F82B00CC612D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -91,11 +94,13 @@
 				E1F593731BD5F82B00CC612D /* AppDelegate.m */,
 				E1F593941BD5FD3F00CC612D /* Weather.h */,
 				E1F593951BD5FD3F00CC612D /* Weather.m */,
-				E1F593751BD5F82B00CC612D /* ViewController.h */,
-				E1F593761BD5F82B00CC612D /* ViewController.m */,
+				E1F593751BD5F82B00CC612D /* HomeViewController.h */,
+				E1F593761BD5F82B00CC612D /* HomeViewController.m */,
 				E1F5939A1BD5FFC600CC612D /* NSString+Utilities.h */,
 				E1F5939B1BD5FFC600CC612D /* NSString+Utilities.m */,
 				E1F593781BD5F82B00CC612D /* Main.storyboard */,
+				E169E46D1BD6143C00159CFA /* WeatherDetailViewController.h */,
+				E169E46E1BD6143C00159CFA /* WeatherDetailViewController.m */,
 				E1F5937B1BD5F82B00CC612D /* Assets.xcassets */,
 				E1F5937D1BD5F82B00CC612D /* LaunchScreen.storyboard */,
 				E1F593801BD5F82B00CC612D /* Info.plist */,
@@ -221,8 +226,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E169E46F1BD6143C00159CFA /* WeatherDetailViewController.m in Sources */,
 				E169E46C1BD60F6D00159CFA /* Weather.m in Sources */,
-				E1F593771BD5F82B00CC612D /* ViewController.m in Sources */,
+				E1F593771BD5F82B00CC612D /* HomeViewController.m in Sources */,
 				E1F593741BD5F82B00CC612D /* AppDelegate.m in Sources */,
 				E1F5939C1BD5FFC600CC612D /* NSString+Utilities.m in Sources */,
 				E1F593711BD5F82B00CC612D /* main.m in Sources */,
