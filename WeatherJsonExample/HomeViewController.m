@@ -32,7 +32,7 @@
 }
 
 -(IBAction)loadWeatherDataForGivenCity:(id)sender {
-    NSString *url = [NSString createURL:cityField.text];
+    NSString *url = [NSString createURL:cityField.text unit:@"hi"];
     NSURLSession *session = [NSURLSession sharedSession];
     __block BOOL jsonParsingCompleted = NO;
 
@@ -69,7 +69,7 @@
         vc.searchedCity = cityField.text;
     }
     else {
-        UIAlertController * alert=   [UIAlertController
+        UIAlertController *alert = [UIAlertController
                                       alertControllerWithTitle:@"Error"
                                       message: [NSString stringWithFormat:@"Unable to find any weather data for %@", cityField.text]
                                       preferredStyle:UIAlertControllerStyleAlert];

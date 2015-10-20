@@ -10,6 +10,6 @@
 
 @interface NSString (Utilities)
 
-+ (NSString *) createURL :(NSString*)city;
++ (NSString *) createURL :(NSString*)city unit:(NSString*)unit;
 
 @end

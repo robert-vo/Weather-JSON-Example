@@ -10,10 +10,10 @@
 
 @implementation NSString (Utilities)
 
-+ (NSString *) createURL :(NSString*)city {
++ (NSString *) createURL :(NSString*)city unit:(NSString*)unit{
     NSString *apiKey = @"&appid=e5e82b27942eb6b9b2e43e2b945e0704";
     NSString *beginningOfUrl = @"http://api.openweathermap.org/data/2.5/weather?q=";
-    return [NSString stringWithFormat:@"%@%@%@", beginningOfUrl, city, apiKey];
+    return [NSString stringWithFormat:@"%@%@%@%@", beginningOfUrl, city, apiKey, unit];
 }
 
 @end
