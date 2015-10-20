@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "NSString+Utilities.h"
 
 @interface WeatherJsonExampleTests : XCTestCase
 
@@ -24,16 +25,19 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+- (void)canaryTest {
+    XCTAssertTrue(true);
 }
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
+- (void)testCreateHoustonOpenMapApiUrl {
+    NSString *url = [NSString createURL:@"Houston"];
+    XCTAssertTrue([url isEqualToString:@"http://api.openweathermap.org/data/2.5/weather?q=Houston&appid=e5e82b27942eb6b9b2e43e2b945e0704"]);
+}
+
+- (void)testCreateLondonUKOpenMapApiUrl {
+    NSString *url = [NSString createURL:@"London, UK"];
+    XCTAssertTrue([url isEqualToString:@"http://api.openweathermap.org/data/2.5/weather?q=London, UK&appid=e5e82b27942eb6b9b2e43e2b945e0704"]);
+
 }
 
 @end
