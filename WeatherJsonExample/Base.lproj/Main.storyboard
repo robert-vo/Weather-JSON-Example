@@ -42,21 +42,45 @@
                                     <action selector="loadWeatherDataForGivenCity:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bcp-xk-rnT"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="City, State" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="in9-SP-tvS">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="City, State" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="in9-SP-tvS">
                                 <rect key="frame" x="191" y="138" width="218" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Units" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8jG-Vh-yj2">
+                                <rect key="frame" x="280" y="195" width="40" height="21"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="p0g-a0-hng"/>
+                                    <constraint firstAttribute="width" constant="40" id="vB2-J8-ZbN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ra2-qB-tmG">
+                                <rect key="frame" x="182" y="224" width="236" height="29"/>
+                                <animations/>
+                                <segments>
+                                    <segment title="Kelvin"/>
+                                    <segment title="Fahrenheit"/>
+                                    <segment title="Celsius"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="in9-SP-tvS" firstAttribute="trailing" secondItem="Zwm-w5-hdG" secondAttribute="trailing" id="A89-Ml-De9"/>
-                            <constraint firstItem="Zwm-w5-hdG" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="HDr-a9-vac"/>
-                            <constraint firstItem="in9-SP-tvS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="118" id="VEv-aL-Ys1"/>
-                            <constraint firstItem="Zwm-w5-hdG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bYa-7h-4sZ"/>
-                            <constraint firstItem="in9-SP-tvS" firstAttribute="leading" secondItem="Zwm-w5-hdG" secondAttribute="leading" id="jsu-So-RAK"/>
+                            <constraint firstItem="ra2-qB-tmG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="25B-37-wr2"/>
+                            <constraint firstItem="Zwm-w5-hdG" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3YG-oK-hso"/>
+                            <constraint firstItem="Zwm-w5-hdG" firstAttribute="leading" secondItem="in9-SP-tvS" secondAttribute="leading" id="3xp-gz-tM8"/>
+                            <constraint firstItem="in9-SP-tvS" firstAttribute="trailing" secondItem="Zwm-w5-hdG" secondAttribute="trailing" id="5An-MC-Vgo"/>
+                            <constraint firstItem="8jG-Vh-yj2" firstAttribute="top" secondItem="in9-SP-tvS" secondAttribute="bottom" constant="27" id="ISg-QD-evj"/>
+                            <constraint firstItem="in9-SP-tvS" firstAttribute="centerX" secondItem="8jG-Vh-yj2" secondAttribute="centerX" id="Xi0-WD-2dh"/>
+                            <constraint firstItem="ra2-qB-tmG" firstAttribute="top" secondItem="8jG-Vh-yj2" secondAttribute="bottom" constant="8" symbolic="YES" id="kZ7-UC-ncr"/>
+                            <constraint firstItem="8jG-Vh-yj2" firstAttribute="centerX" secondItem="ra2-qB-tmG" secondAttribute="centerX" id="moV-cn-HhZ"/>
+                            <constraint firstItem="Zwm-w5-hdG" firstAttribute="top" secondItem="ra2-qB-tmG" secondAttribute="bottom" constant="33" id="mxo-91-mRV"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6rp-Fd-LIw"/>
