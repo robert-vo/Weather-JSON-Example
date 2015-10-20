@@ -85,6 +85,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="6rp-Fd-LIw"/>
                     <connections>
+                        <outlet property="UnitsSegmentedControl" destination="ra2-qB-tmG" id="zyh-mG-4NV"/>
                         <outlet property="cityField" destination="in9-SP-tvS" id="80O-gm-q9n"/>
                         <outlet property="weatherViewController" destination="8bC-Xf-vdC" id="oA7-lN-ZCJ"/>
                         <segue destination="ogH-Fl-dnX" kind="show" identifier="weatherVC" id="EVA-Kz-m5l"/>

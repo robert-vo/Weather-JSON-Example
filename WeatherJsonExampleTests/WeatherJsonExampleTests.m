@@ -30,13 +30,13 @@
 }
 
 - (void)testCreateHoustonOpenMapApiUrl {
-    NSString *url = [NSString createURL:@"Houston"];
-    XCTAssertTrue([url isEqualToString:@"http://api.openweathermap.org/data/2.5/weather?q=Houston&appid=e5e82b27942eb6b9b2e43e2b945e0704"]);
+    NSString *url = [NSString createURL:@"Houston" unit:@"Celsius"];
+    XCTAssertTrue([url isEqualToString:@"http://api.openweathermap.org/data/2.5/weather?q=Houston&appid=e5e82b27942eb6b9b2e43e2b945e0704&units=Metric"]);
 }
 
 - (void)testCreateLondonUKOpenMapApiUrl {
-    NSString *url = [NSString createURL:@"London, UK"];
-    XCTAssertTrue([url isEqualToString:@"http://api.openweathermap.org/data/2.5/weather?q=London, UK&appid=e5e82b27942eb6b9b2e43e2b945e0704"]);
+    NSString *url = [NSString createURL:@"London, UK" unit:@"Fahrenheit"];
+    XCTAssertTrue([url isEqualToString:@"http://api.openweathermap.org/data/2.5/weather?q=London, UK&appid=e5e82b27942eb6b9b2e43e2b945e0704&units=Imperial"]);
 
 }
 

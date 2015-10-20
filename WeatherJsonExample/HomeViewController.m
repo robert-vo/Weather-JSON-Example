@@ -17,7 +17,7 @@
 
 @implementation HomeViewController
 
-@synthesize cityField, weatherForCity, weatherViewController, weatherDataResponse;
+@synthesize cityField, weatherForCity, weatherViewController, weatherDataResponse, UnitsSegmentedControl;
 
 
 - (void)viewDidLoad {
@@ -32,7 +32,8 @@
 }
 
 -(IBAction)loadWeatherDataForGivenCity:(id)sender {
-    NSString *url = [NSString createURL:cityField.text unit:@"hi"];
+    
+    NSString *url = [NSString createURL:cityField.text unit:[NSString getUnits:[UnitsSegmentedControl selectedSegmentIndex]]];
     NSURLSession *session = [NSURLSession sharedSession];
     __block BOOL jsonParsingCompleted = NO;
 

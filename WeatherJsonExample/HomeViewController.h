@@ -11,6 +11,7 @@
 #import "WeatherDetailViewController.h"
 
 @interface HomeViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UISegmentedControl *UnitsSegmentedControl;
 @property (weak, nonatomic) IBOutlet UITextField *cityField;
 @property NSDictionary *weatherDataResponse;
 @property Weather *weatherForCity;

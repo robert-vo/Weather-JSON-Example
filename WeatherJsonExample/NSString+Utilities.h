@@ -11,5 +11,6 @@
 @interface NSString (Utilities)
 
 + (NSString *) createURL :(NSString*)city unit:(NSString*)unit;
++ (NSString *) getUnits :(int)selectedSegment;
 
 @end
