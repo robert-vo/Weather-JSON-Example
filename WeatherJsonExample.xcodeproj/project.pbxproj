@@ -14,6 +14,7 @@
 		E1F5937C1BD5F82B00CC612D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1F5937B1BD5F82B00CC612D /* Assets.xcassets */; };
 		E1F5937F1BD5F82B00CC612D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1F5937D1BD5F82B00CC612D /* LaunchScreen.storyboard */; };
 		E1F5938A1BD5F82B00CC612D /* WeatherJsonExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F593891BD5F82B00CC612D /* WeatherJsonExampleTests.m */; };
+		E1F5939C1BD5FFC600CC612D /* NSString+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F5939B1BD5FFC600CC612D /* NSString+Utilities.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,10 @@
 		E1F593851BD5F82B00CC612D /* WeatherJsonExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherJsonExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1F593891BD5F82B00CC612D /* WeatherJsonExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherJsonExampleTests.m; sourceTree = "<group>"; };
 		E1F5938B1BD5F82B00CC612D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1F593941BD5FD3F00CC612D /* Weather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Weather.h; sourceTree = "<group>"; };
+		E1F593951BD5FD3F00CC612D /* Weather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Weather.m; sourceTree = "<group>"; };
+		E1F5939A1BD5FFC600CC612D /* NSString+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Utilities.h"; sourceTree = "<group>"; };
+		E1F5939B1BD5FFC600CC612D /* NSString+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utilities.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,8 +88,12 @@
 			children = (
 				E1F593721BD5F82B00CC612D /* AppDelegate.h */,
 				E1F593731BD5F82B00CC612D /* AppDelegate.m */,
+				E1F593941BD5FD3F00CC612D /* Weather.h */,
+				E1F593951BD5FD3F00CC612D /* Weather.m */,
 				E1F593751BD5F82B00CC612D /* ViewController.h */,
 				E1F593761BD5F82B00CC612D /* ViewController.m */,
+				E1F5939A1BD5FFC600CC612D /* NSString+Utilities.h */,
+				E1F5939B1BD5FFC600CC612D /* NSString+Utilities.m */,
 				E1F593781BD5F82B00CC612D /* Main.storyboard */,
 				E1F5937B1BD5F82B00CC612D /* Assets.xcassets */,
 				E1F5937D1BD5F82B00CC612D /* LaunchScreen.storyboard */,
@@ -213,6 +222,7 @@
 			files = (
 				E1F593771BD5F82B00CC612D /* ViewController.m in Sources */,
 				E1F593741BD5F82B00CC612D /* AppDelegate.m in Sources */,
+				E1F5939C1BD5FFC600CC612D /* NSString+Utilities.m in Sources */,
 				E1F593711BD5F82B00CC612D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -402,6 +412,7 @@
 				E1F593901BD5F82B00CC612D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E1F593911BD5F82B00CC612D /* Build configuration list for PBXNativeTarget "WeatherJsonExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -410,6 +421,7 @@
 				E1F593931BD5F82B00CC612D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
