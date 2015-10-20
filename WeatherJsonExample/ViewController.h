@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Weather.h"
 
 @interface ViewController : UIViewController
 
@@ -16,13 +17,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *humidityLabel;
 @property (weak, nonatomic) IBOutlet UILabel *maxAndMinTemperatureLabel;
 @property (weak, nonatomic) IBOutlet UILabel *currentWeatherDescriptionLabel;
+@property NSArray *weatherDataResponse;
+@property Weather *weatherForCity;
+@property (strong, nonatomic) IBOutlet UIView *weatherViewController;
 -(IBAction)loadWeatherDataForGivenCity:(id)sender;
 
 @end
-
-/*Temperature
- • Pressure
- • Humidity
- • Maximum and minimum temperature
- • Current weather condition description and icon/image
- */
