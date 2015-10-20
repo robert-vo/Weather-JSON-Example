@@ -93,6 +93,7 @@
                         <outlet property="maxAndMinTemperatureLabel" destination="6vf-gl-XTh" id="tmW-80-IsJ"/>
                         <outlet property="pressureLabel" destination="mpi-28-h5F" id="vHQ-on-5YZ"/>
                         <outlet property="temperatureLabel" destination="b6A-xS-X56" id="xSg-0P-UqR"/>
+                        <outlet property="weatherViewController" destination="8bC-Xf-vdC" id="oA7-lN-ZCJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
