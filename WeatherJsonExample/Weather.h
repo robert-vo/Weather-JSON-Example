@@ -5,6 +5,9 @@
 //  Created by Robert Vo on 10/19/15.
 //  Copyright © 2015 Robert Vo. All rights reserved.
 //
+//
+//  Header file for Weather object to store the values of the JSON request.
+//
 
 #import <Foundation/Foundation.h>
 

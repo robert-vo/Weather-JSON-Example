@@ -13,6 +13,7 @@
 + (NSString *) createURL :(NSString*)city unit:(NSString*)unit{
     NSString *apiKey = @"&appid=e5e82b27942eb6b9b2e43e2b945e0704";
     NSString *temperatureUnit = @"&units=";
+    
     if([unit isEqualToString:@"Fahrenheit"]) {
         temperatureUnit = [temperatureUnit stringByAppendingString:@"Imperial"];
     }
