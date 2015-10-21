@@ -26,21 +26,4 @@
     return [NSString stringWithFormat:@"%@%@%@%@", beginningOfUrl, city, apiKey, temperatureUnit];
 }
 
-+ (NSString *) getUnits :(NSInteger)selectedSegment {
-    switch (selectedSegment) {
-        case 0:
-            return @"Kelvin";
-            break;
-        case 1:
-            return @"Fahrenheit";
-            break;
-        case 2:
-            return @"Celsius";
-            break;
-        default:
-            break;
-    }
-    return @"";
-}
-
 @end
