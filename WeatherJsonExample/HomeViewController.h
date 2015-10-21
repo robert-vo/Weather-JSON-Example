@@ -11,11 +11,14 @@
 #import "WeatherDetailViewController.h"
 
 @interface HomeViewController : UIViewController
+
 @property (weak, nonatomic) IBOutlet UISegmentedControl *UnitsSegmentedControl;
 @property (weak, nonatomic) IBOutlet UITextField *cityField;
+@property (strong, nonatomic) IBOutlet UIView *weatherViewController;
 @property NSDictionary *weatherDataResponse;
 @property Weather *weatherForCity;
-@property (strong, nonatomic) IBOutlet UIView *weatherViewController;
+@property int searchFailures;
+
 -(IBAction)loadWeatherDataForGivenCity:(id)sender;
 
 @end
