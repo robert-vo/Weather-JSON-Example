@@ -46,6 +46,7 @@
  *  in the form of a JSON format, and sets the weatherForCity attributes accordingly.
  *  Success or not, it will go to the prepareForSegue method.
  */
+
 -(IBAction)loadWeatherDataForGivenCity:(id)sender {
     
     //Checks what the user has selected.
@@ -60,10 +61,10 @@
     //This variable to check when the block has finished running.
     __block BOOL jsonParsingCompleted = NO;
 
-    /*Start of block
-     *If you are copying this code, make sure to edit your Info.plist file.
-     *Add an entry - NSAppTransportSecurity with type Dictionary.
-     *Insert a value into the NSAppTransportSecurity Dictionary - NSAllowsArbitraryLoads, as a boolean with value YES
+    /*  Start of block
+     *  If you are copying this code, make sure to edit your Info.plist file.
+     *  Add an entry - NSAppTransportSecurity with type Dictionary.
+     *  Insert a value into the NSAppTransportSecurity Dictionary - NSAllowsArbitraryLoads, as a boolean with value YES
     */
     
     [[session dataTaskWithURL:[NSURL URLWithString:url] completionHandler:^(NSData *data,
