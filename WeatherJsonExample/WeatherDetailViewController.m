@@ -22,7 +22,6 @@
     [super viewDidLoad];
     
     //Sets the title and label text to their respective values.
-    
     self.title = searchedCity;
     temperatureLabel.text = [NSString stringWithFormat:@"Temperature: %@°%@", weatherDetail.temperature, weatherDetail.temperatureUnit];
     pressureLabel.text = [NSString stringWithFormat:@"Pressure: %@hPa", weatherDetail.pressure];
