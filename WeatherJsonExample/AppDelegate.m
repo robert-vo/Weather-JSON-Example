@@ -1,10 +1,4 @@
-//
-//  AppDelegate.m
-//  WeatherJsonExample
-//
-//  Created by Robert Vo on 10/19/15.
-//  Copyright © 2015 Robert Vo. All rights reserved.
-//
+//Do not look in here.
 
 #import "AppDelegate.h"
 
