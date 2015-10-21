@@ -21,10 +21,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = searchedCity;
-    temperatureLabel.text = [NSString stringWithFormat:@"Temperature: %@", weatherDetail.temperature];
-    pressureLabel.text = [NSString stringWithFormat:@"Pressure: %@", weatherDetail.pressure];
-    humidityLabel.text = [NSString stringWithFormat:@"Humidity: %@", weatherDetail.humidity];
-    maxAndMinTemperatureLabel.text = [NSString stringWithFormat:@"Min Temp: %@, Max Temp: %@", weatherDetail.maximumTemperature, weatherDetail.minimumTemperature];
+    temperatureLabel.text = [NSString stringWithFormat:@"Temperature: %@°%@", weatherDetail.temperature, weatherDetail.temperatureUnit];
+    pressureLabel.text = [NSString stringWithFormat:@"Pressure: %@hPa", weatherDetail.pressure];
+    humidityLabel.text = [NSString stringWithFormat:@"Humidity: %@%%", weatherDetail.humidity];
+    maxAndMinTemperatureLabel.text = [NSString stringWithFormat:@"Min Temp: %@°%@\nMax Temp: %@°%@", weatherDetail.maximumTemperature, weatherDetail.temperatureUnit, weatherDetail.minimumTemperature, weatherDetail.temperatureUnit];
     currentWeatherDescriptionLabel.text = [NSString stringWithFormat:@"Description: %@", weatherDetail.weatherDescription];
 }
 
