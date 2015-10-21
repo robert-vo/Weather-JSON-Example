@@ -17,23 +17,22 @@
 
 @implementation HomeViewController
 
-@synthesize cityField, weatherForCity, weatherViewController, weatherDataResponse, UnitsSegmentedControl;
+@synthesize cityField, weatherForCity, weatherViewController, weatherDataResponse, UnitsSegmentedControl, searchFailures;
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     weatherForCity = [[Weather alloc] init];
-    // Do any additional setup after loading the view, typically from a nib.
+    searchFailures = 0;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(IBAction)loadWeatherDataForGivenCity:(id)sender {
-    
-    NSString *url = [NSString createURL:cityField.text unit:[NSString getUnits:[UnitsSegmentedControl selectedSegmentIndex]]];
+    NSString *selectedUnit = [UnitsSegmentedControl titleForSegmentAtIndex:UnitsSegmentedControl.selectedSegmentIndex];
+    NSString *url = [NSString createURL:cityField.text unit:selectedUnit];
     NSURLSession *session = [NSURLSession sharedSession];
     __block BOOL jsonParsingCompleted = NO;
 
@@ -54,10 +53,14 @@
             weatherForCity.maximumTemperature = [[weatherDataResponse objectForKey:@"main"] objectForKey:@"temp_max"];
             weatherForCity.minimumTemperature = [[weatherDataResponse objectForKey:@"main"] objectForKey:@"temp_min"];
             weatherForCity.weatherDescription = [[[weatherDataResponse objectForKey:@"weather"] objectAtIndex:0] objectForKey:@"description"];
+            weatherForCity.temperatureUnit = [NSString stringWithFormat:@"%c", [selectedUnit characterAtIndex:0]];
             jsonParsingCompleted = YES;
-        }     }] resume];
+        }
+    }] resume];
     
-    while (CFRunLoopRunInMode(kCFRunLoopDefaultMode, 0, true) && !jsonParsingCompleted){};
+    while(!jsonParsingCompleted) {
+        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
+    }
     
     [self performSegueWithIdentifier:@"weatherVC" sender:nil];
 
@@ -70,9 +73,16 @@
         vc.searchedCity = cityField.text;
     }
     else {
+        searchFailures = searchFailures + 1;
+        NSString *alertMessage = [NSString stringWithFormat:@"Unable to find any weather data for %@", cityField.text];
+        
+        if(searchFailures > 5) {
+            alertMessage = @"You haven't been able to find any weather data now. Try closing and reopening this app!";
+        }
+        
         UIAlertController *alert = [UIAlertController
                                       alertControllerWithTitle:@"Error"
-                                      message: [NSString stringWithFormat:@"Unable to find any weather data for %@", cityField.text]
+                                      message: alertMessage
                                       preferredStyle:UIAlertControllerStyleAlert];
         
         UIAlertAction *okayButton = [UIAlertAction
@@ -82,7 +92,6 @@
                                          [alert dismissViewControllerAnimated:YES completion:nil];
                                      }];
         [alert addAction:okayButton];
-        
         [self presentViewController:alert animated:YES completion:nil];
     }
 }
