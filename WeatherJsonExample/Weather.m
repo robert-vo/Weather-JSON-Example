@@ -10,6 +10,6 @@
 
 @implementation Weather
 
-@synthesize temperature, pressure, humidity, maximumTemperature, minimumTemperature, weatherDescription, isImperial, isMetric;
+@synthesize temperature, pressure, humidity, maximumTemperature, minimumTemperature, weatherDescription, temperatureUnit;
 
 @end

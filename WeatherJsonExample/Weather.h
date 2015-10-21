@@ -16,7 +16,6 @@
 @property NSString *maximumTemperature;
 @property NSString *minimumTemperature;
 @property NSString *weatherDescription;
-@property BOOL *isImperial;
-@property BOOL *isMetric;
+@property NSString *temperatureUnit;
 
 @end
